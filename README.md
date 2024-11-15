@@ -8,7 +8,7 @@ The code for this project consists of 4 different files:
 -	CNN-Sequential_model_HB.ipynb: this notebook corresponds to the final attempt for modelling the classifier. It consists of the ResNet101v2 CNN to extract features, followed by a Sequential Neural Network that take into consideration the “time” dimension captured by the different frames. It is the best performing model.
   
 # Scaling up of the application:
-Storing video (unstructured data) means using a NoSQL database. Due to the flexibility they offer (horizontal scalability, reliability, easy access), using a cloud database like Google Cloud is considered the best option. 
+Storing video (unstructured data) means using a NoSQL database. Due to the flexibility they offer (horizontal scalability, reliability, easy access), using a cloud database is considered the best option. Given the available means, Google Cloud is used.
 All models have been built with TensorFlow. Hence, when it comes to distributing the training of models, the `tf.distribute.Strategy` API can be used for either data parallelising or model parallelising, according to the needs of the situation. If the case of scaling up the application ever came, Google Kubernetes Engine (GKE) services could be easily used, since Google Cloud is being used as a database. Deploying the application in a Kubernetes cluster would enable to dynamically scale the number of application replicas on demand.
 
 ## References:
